@@ -41,3 +41,6 @@ Route::view('/fare/calculator', 'fare.calculator');
 
 // Passenger List (Admin)
 Route::view('/passengers/list', 'passengers.list');
+
+// Contact Page
+Route::view('/contact', 'contact.contact');
