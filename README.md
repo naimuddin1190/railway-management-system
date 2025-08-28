@@ -4,72 +4,111 @@
 [![PHP](https://img.shields.io/badge/PHP-8.2-blue?logo=php&logoColor=white)](https://www.php.net/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 [![MySQL](https://img.shields.io/badge/MySQL-8-blue?logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-A *Laravel-based Train Ticket Booking System* designed to provide seamless ticket booking, train schedule management, and passenger handling. The system includes distinct dashboards for *Admin* and *Passenger*, ensuring smooth operations and secure access.
+A *Laravel-based Train Ticket Booking System* designed to provide *seamless ticket booking*, train schedule management, and passenger handling.  
+Distinct dashboards for *Admin* and *Passenger* ensure secure and smooth operations.
 
 ---
+![Homepage](public/images/screenshot/homepage.png)
+![Train Schedule](public/images/screenshot/schedule.png)
 
-## 👥 Team Members
-- *Naim*  
-- *Ratul*  
-- *Shamraj*  
-- *Shagor*  
+## 👥 Team Members & Roles
+| Name | Role |
+|------|------|
+| *Md Naim Uddin Mozumdar* | Team Leader & Developer |
+| *Syed Nasibur Rahaman Ratul* | Backend Developer |
+| *Shamraj Deb Nath* | Frontend Developer |
+| *Shakwat Azam Shagor* | UI/UX Designer |
 
 ---
 
 ## 📌 Features
 
-### ✅ 1. User Authentication
-- Functions: Sign up, login, logout, profile update  
-- Security: Password hashing & validation  
-- Roles: Separate dashboards for *Admin* and *Passenger*  
+### 1️⃣ User Authentication
+- Sign up, login, logout, profile update  
+- Secure password hashing & validation  
+- Admin & Passenger dashboards  
 
-### ✅ 2. Train Schedule Module
-- Details: Train number, name, stops, departure & arrival times  
-- Route Mapping: Source → Destination with intermediate stations  
+### 2️⃣ Train Schedule Module
+- Train number, name, stops, departure & arrival times  
+- Route mapping: Source → Destination with intermediate stations  
 
-### ✅ 3. Ticket Booking System
-- Functions: Select date, train, class, and number of passengers  
-- Booking Record: Stored in user account & visible in admin panel  
-- E-ticket Generation: Automatic ticket receipt with *PNR*  
+### 3️⃣ Ticket Booking System
+- Select date, train, class, and number of passengers  
+- Booking records stored for users & admin view  
+- Automatic *E-ticket* generation with *PNR*  
 
-### ✅ 4. Seat Availability Checker
-- Classes Covered: AC, Sleeper, General, etc.  
+### 4️⃣ Seat Availability Checker
+- Classes: AC, Sleeper, General, etc.  
 
-### ✅ 5. Fare Calculator
+### 5️⃣ Fare Calculator
 - Inputs: Distance, class type, passenger age  
-- Discounts: Optional rules for children and senior citizens  
+- Optional discounts for children & senior citizens  
 
-### ✅ 6. Admin Panel
-- Modules: Add/edit trains, view bookings, manage users  
-- Reports: Revenue and usage data insights  
+### 6️⃣ Admin Panel
+- Add/edit trains, view bookings, manage users  
+- Revenue & usage reports  
 
-### ✅ 7. Passenger Module
-- Details: Name, age, ID proof, contact  
-- Searchable List: Admins can view passengers by train/date  
+### 7️⃣ Passenger Module
+- Name, age, ID proof, contact details  
+- Searchable by train/date  
 
-### ✅ 8. Ticket Cancellation & Refund
-- Cancellation Rules: Based on time and booking status  
+### 8️⃣ Ticket Cancellation & Refund
+- Rules based on booking status & timing  
 
 ---
 
 ## 🛠 Technologies Used
-- *Laravel 11* (Backend & MVC framework)  
-- *Blade Templates* (Frontend Views)  
-- *Bootstrap 5* (Responsive Design)  
-- *MySQL* (Database)  
-- *PHP 8.2+* (Programming Language)  
+- *Laravel 11* – Backend MVC  
+- *Blade Templates* – Frontend Views  
+- *Bootstrap 5* – Responsive Design  
+- *MySQL* – Database  
+- *PHP 8.2+* – Core Language  
+- *Git* – Version Control  
 
 ---
+🎯 Future Improvements
+
+💳 Online Payment Gateway (bKash, Nagad, Card)
+
+📧 SMS / Email Notifications
+
+📊 Advanced Reports & Analytics
+
+🌐 Multi-language Support
 
 ## ⚙ Installation Guide
 
-1. *Clone the Repository*  
-   ```bash
-   git clone https://github.com/your-repo/railway-management-system.git
-   cd railway-management-system
+1. *Clone the repository*  
+```bash
+git clone https://github.com/your-repo/railway-management-system.git
+cd railway-management-system
+
+2. Install dependencies
+composer install
+npm install && npm run dev
+
+3.Environment setup
+ cp .env.example .env
+php artisan key:generate
+
+Update database credentials in .env.
+
+4.Run migrations
+  php artisan migrate
+
+5.Start server
+ php artisan serve
 
 
+Visit http://127.0.0.1:8000
+
+📞 Contact
+
+📧 Email: uddinmdnaim10@gmail.com
+
+📱 Phone: +8801833515057
 
 
 
