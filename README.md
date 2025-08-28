@@ -1,3 +1,78 @@
+# 🚆 Railway Reservation System
+
+[![Laravel](https://img.shields.io/badge/Laravel-11-orange?logo=laravel&logoColor=white)](https://laravel.com/)
+[![PHP](https://img.shields.io/badge/PHP-8.2-blue?logo=php&logoColor=white)](https://www.php.net/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-8-blue?logo=mysql&logoColor=white)](https://www.mysql.com/)
+
+A *Laravel-based Train Ticket Booking System* designed to provide seamless ticket booking, train schedule management, and passenger handling. The system includes distinct dashboards for *Admin* and *Passenger*, ensuring smooth operations and secure access.
+
+---
+
+## 👥 Team Members
+- *Naim*  
+- *Ratul*  
+- *Shamraj*  
+- *Shagor*  
+
+---
+
+## 📌 Features
+
+### ✅ 1. User Authentication
+- Functions: Sign up, login, logout, profile update  
+- Security: Password hashing & validation  
+- Roles: Separate dashboards for *Admin* and *Passenger*  
+
+### ✅ 2. Train Schedule Module
+- Details: Train number, name, stops, departure & arrival times  
+- Route Mapping: Source → Destination with intermediate stations  
+
+### ✅ 3. Ticket Booking System
+- Functions: Select date, train, class, and number of passengers  
+- Booking Record: Stored in user account & visible in admin panel  
+- E-ticket Generation: Automatic ticket receipt with *PNR*  
+
+### ✅ 4. Seat Availability Checker
+- Classes Covered: AC, Sleeper, General, etc.  
+
+### ✅ 5. Fare Calculator
+- Inputs: Distance, class type, passenger age  
+- Discounts: Optional rules for children and senior citizens  
+
+### ✅ 6. Admin Panel
+- Modules: Add/edit trains, view bookings, manage users  
+- Reports: Revenue and usage data insights  
+
+### ✅ 7. Passenger Module
+- Details: Name, age, ID proof, contact  
+- Searchable List: Admins can view passengers by train/date  
+
+### ✅ 8. Ticket Cancellation & Refund
+- Cancellation Rules: Based on time and booking status  
+
+---
+
+## 🛠 Technologies Used
+- *Laravel 11* (Backend & MVC framework)  
+- *Blade Templates* (Frontend Views)  
+- *Bootstrap 5* (Responsive Design)  
+- *MySQL* (Database)  
+- *PHP 8.2+* (Programming Language)  
+
+---
+
+## ⚙ Installation Guide
+
+1. *Clone the Repository*  
+   ```bash
+   git clone https://github.com/your-repo/railway-management-system.git
+   cd railway-management-system
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
