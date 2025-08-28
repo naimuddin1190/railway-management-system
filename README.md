@@ -1,4 +1,4 @@
-# 🚆 Railway Reservation System
+# 🚆 Railway Management System
 
 [![Laravel](https://img.shields.io/badge/Laravel-11-orange?logo=laravel&logoColor=white)](https://laravel.com/)
 [![PHP](https://img.shields.io/badge/PHP-8.2-blue?logo=php&logoColor=white)](https://www.php.net/)
