@@ -94,13 +94,13 @@
                     <!-- Carousel Images -->
                     <div class="carousel-inner rounded-4">
                         <div class="carousel-item active">
-                            <img src="{{ asset('images/train ticket.jpeg') }}" class="d-block w-100 rounded-4" style="max-height: 350px; object-fit: cover;" alt="Train 1">
+                            <img src="{{ asset('images/carousel/c1.jpeg') }}" class="d-block w-100 rounded-4" style="max-height: 350px; object-fit: cover;" alt="Train 1">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('images/Trainticket2.jpeg') }}" class="d-block w-100 rounded-4" style="max-height: 350px; object-fit: cover;" alt="Train 2">
+                            <img src="{{ asset('images/carousel/c2.jpg') }}" class="d-block w-100 rounded-4" style="max-height: 350px; object-fit: cover;" alt="Train 2">
                         </div>
                         <div class="carousel-item">
-                            <img src="{{ asset('images/RailwayBg.jpg') }}" class="d-block w-100 rounded-4" style="max-height: 350px; object-fit: cover;" alt="Train 3">
+                            <img src="{{ asset('images/carousel/c3.jpg') }}" class="d-block w-100 rounded-4" style="max-height: 350px; object-fit: cover;" alt="Train 3">
                         </div>
                     </div>
                 </div>
@@ -115,22 +115,22 @@
 <div class="container my-5">
     <div class="row text-center g-4">
         <div class="col-md-3 col-6">
-            <img src="{{ asset('images/SearchTrain1.png') }}" class="img-fluid mb-3" style="max-height:140px;" alt="Search">
+            <img src="{{ asset('images/middle/search.png') }}" class="img-fluid mb-3" style="max-height:140px;" alt="Search">
             <h5 class="fw-bold">Search</h5>
             <p class="text-secondary small">Choose your origin, destination, journey dates and search for trains.</p>
         </div>
         <div class="col-md-3 col-6">
-            <img src="{{ asset('images/Select1.png') }}" class="img-fluid mb-3" style="max-height:140px;" alt="Select">
+            <img src="{{ asset('images/middle/select.png') }}" class="img-fluid mb-3" style="max-height:140px;" alt="Select">
             <h5 class="fw-bold">Select</h5>
             <p class="text-secondary small">Select your desired trip and choose your seats.</p>
         </div>
         <div class="col-md-3 col-6">
-            <img src="{{ asset('images/pay.png') }}" class="img-fluid mb-3" style="max-height:140px;" alt="Pay">
+            <img src="{{ asset('images/middle/pay.png') }}" class="img-fluid mb-3" style="max-height:140px;" alt="Pay">
             <h5 class="fw-bold">Pay</h5>
             <p class="text-secondary small">Pay for tickets via Debit / Credit Cards or MFS.</p>
         </div>
         <div class="col-md-3 col-6">
-            <img src="{{ asset('images/ticket.png') }}" class="img-fluid mb-3" style="max-height:140px;" alt="Ticket">
+            <img src="{{ asset('images/middle/ticket.png') }}" class="img-fluid mb-3" style="max-height:140px;" alt="Ticket">
             <h5 class="fw-bold">Get Ticket</h5>
             <p class="text-secondary small">Instantly download or print your e-ticket hassle-free.</p>
         </div>

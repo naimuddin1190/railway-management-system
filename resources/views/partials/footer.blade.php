@@ -29,10 +29,10 @@
       <div class="col-md-4 mb-4">
         <h5 class="fw-bold mb-3">Payment Methods</h5>
         <div class="d-flex flex-wrap gap-3 mb-3">
-          <img src="{{ asset('images/bkash.png') }}" alt="bKash" class="payment-logo">
-          <img src="{{ asset('images/nagad.png') }}" alt="Nagad" class="payment-logo">
-          <img src="{{ asset('images/rocket.png') }}" alt="Rocket" class="payment-logo">
-          <img src="{{ asset('images/upay.png') }}" alt="Upay" class="payment-logo">
+          <img src="{{ asset('images/payment/bkash.png') }}" alt="bKash" class="payment-logo">
+          <img src="{{ asset('images/payment/nagad.png') }}" alt="Nagad" class="payment-logo">
+          <img src="{{ asset('images/payment/rocket.png') }}" alt="Rocket" class="payment-logo">
+          <img src="{{ asset('images/payment/upay.png') }}" alt="Upay" class="payment-logo">
         </div>
 
         <h5 class="fw-bold mb-3">Follow Us</h5>

@@ -15,7 +15,7 @@
 
     <!-- Ticket Card -->
     <div class="card p-4 shadow-sm rounded-4 mx-auto" style="max-width: 500px; background-color: #f8f9fa;">
-        <p><strong>Passenger:</strong> John Doe</p>
+        <p><strong>Passenger:</strong> Naim </p>
         <p><strong>Train:</strong> Subarna Express</p>
         <p><strong>Seat:</strong> AC - B2</p>
         <p><strong>Date:</strong> 20-Aug-2025</p>
