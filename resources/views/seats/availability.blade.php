@@ -31,7 +31,7 @@
                 <option>Silk City Express</option>
                 <option>Meghna Express</option>
                 <option>Rangpur Express</option>
-                <!-- আরও train add করতে পারো -->
+            
             </select>
         </div>
 
