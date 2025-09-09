@@ -65,11 +65,10 @@
                         <select class="form-select rounded-pill shadow-sm" name="class" required>
                             <option value="" selected disabled>Choose Class</option>
                             <option>AC</option>
-                            <option>Sleeper</option>
-                            <option>Shovon</option>
-                            <option>Shovon Chair</option>
-                            <option>First Class</option>
-                            <option>General</option>
+                <option>Berth</option>
+                <option>Shovon</option>
+                <option>Shovon Chair</option>
+                <option>First Class</option>
                         </select>
                     </div>
 

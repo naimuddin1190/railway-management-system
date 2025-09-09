@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TrainController;
+use App\Http\Controllers\BookingController;
 
 
 
@@ -17,12 +19,17 @@ Route::view('/admin/dashboard', 'admin.dashboard');
 Route::view('/passenger/dashboard', 'passenger.dashboard');
 
 // Train Schedule
-Route::view('/trains/schedule', 'trains.schedule');
+
+
+Route::get('/trains/schedule', [TrainController::class, 'schedule'])->name('trains.schedule');
+
 
 // Booking Pages
-Route::view('/booking/create', 'booking.create');
-Route::view('/booking/ticket', 'booking.ticket');
-Route::view('/booking/cancel', 'booking.cancel');
+Route::get('/booking/{schedule}/create', [BookingController::class, 'create'])->name('booking.create');
+Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
+Route::get('/booking/ticket/{pnr}', [BookingController::class, 'ticket'])->name('booking.ticket');
+Route::get('/booking/ticket/{pnr}/download', [BookingController::class, 'downloadTicket'])->name('booking.download');
+
 
 // Seat Availability
 Route::view('/seats/availability', 'seats.availability');

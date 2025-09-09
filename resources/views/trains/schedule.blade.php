@@ -13,37 +13,30 @@
         <p class="text-secondary">Check all major train schedules across Bangladesh</p>
     </div>
 
-    <!-- Search Filter (optional) -->
-    <form class="row g-3 mb-4 justify-content-center" action="/trains/schedule" method="get">
+    <!-- Search Filter -->
+    <form class="row g-3 mb-4 justify-content-center" action="{{ route('trains.schedule') }}" method="get">
         <div class="col-md-3">
             <select class="form-select rounded-pill shadow-sm" name="from">
                 <option value="" selected disabled>From (City)</option>
-                <option>Dhaka</option>
-                <option>Chattogram</option>
-                <option>Cox's Bazar</option>
-                <option>Khulna</option>
-                <option>Sylhet</option>
-                <option>Rajshahi</option>
-                <option>Comilla</option>
-                <option>Feni</option>
-                <option>Bogra</option>
-                <option>Narsingdi</option>
+                @foreach($cities as $city)
+                    <option value="{{ $city }}" {{ request('from') == $city ? 'selected' : '' }}>
+                        {{ $city }}
+                    </option>
+                @endforeach
             </select>
         </div>
         <div class="col-md-3">
             <select class="form-select rounded-pill shadow-sm" name="to">
                 <option value="" selected disabled>To (City)</option>
-                <option>Dhaka</option>
-                <option>Chattogram</option>
-                <option>Cox's Bazar</option>
-                <option>Khulna</option>
-                <option>Sylhet</option>
-                <option>Rajshahi</option>
-                <option>Comilla</option>
-                <option>Feni</option>
-                <option>Bogra</option>
-                <option>Narsingdi</option>
+                @foreach($cities as $city)
+                    <option value="{{ $city }}" {{ request('to') == $city ? 'selected' : '' }}>
+                        {{ $city }}
+                    </option>
+                @endforeach
             </select>
+        </div>
+        <div class="col-md-3">
+            <input type="date" class="form-control rounded-pill shadow-sm" name="date" value="{{ request('date') }}">
         </div>
         <div class="col-md-2">
             <button class="btn btn-success rounded-pill w-100">Filter</button>
@@ -60,52 +53,31 @@
                     <th>To</th>
                     <th>Departure</th>
                     <th>Arrival</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Sample Trains -->
-                <tr>
-                    <td>Subarna Express</td>
-                    <td>Dhaka</td>
-                    <td>Chattogram</td>
-                    <td>07:00 AM</td>
-                    <td>12:00 PM</td>
-                </tr>
-                <tr>
-                    <td>Padma Express</td>
-                    <td>Dhaka</td>
-                    <td>Rajshahi</td>
-                    <td>11:00 PM</td>
-                    <td>05:00 AM</td>
-                </tr>
-                <tr>
-                    <td>Turna Express</td>
-                    <td>Dhaka</td>
-                    <td>Chattogram</td>
-                    <td>08:00 AM</td>
-                    <td>01:00 PM</td>
-                </tr>
-                <tr>
-                    <td>Ekota Express</td>
-                    <td>Dhaka</td>
-                    <td>Dinajpur</td>
-                    <td>09:30 PM</td>
-                    <td>05:30 AM</td>
-                </tr>
-                <tr>
-                    <td>Chattala Express</td>
-                    <td>Chattogram</td>
-                    <td>Dhaka</td>
-                    <td>06:00 AM</td>
-                    <td>11:30 AM</td>
-                </tr>
-                <tr>
-                    <td>Rupsha Express</td>
-                    <td>Khulna</td>
-                    <td>Dhaka</td>
-                    <td>08:00 PM</td>
-                    <td>06:00 AM</td>
-                </tr>
+                @forelse($schedules as $schedule)
+                    <tr>
+                        <td>{{ $schedule->train->name }}</td>
+                        <td>{{ $schedule->train->source }}</td>
+                        <td>{{ $schedule->train->destination }}</td>
+                        <td>{{ \Carbon\Carbon::parse($schedule->departure_time)->format('h:i A') }}</td>
+                        <td>{{ \Carbon\Carbon::parse($schedule->arrival_time)->format('h:i A') }}</td>
+                        <td>
+                            <a href="{{ route('booking.create', $schedule->id) }}" class="btn btn-sm btn-outline-success rounded-pill">
+                                Book Now
+                            </a>
+                        </td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="6" class="text-center text-muted py-4">
+                            <i class="bi bi-exclamation-circle text-danger"></i> 
+                            Sorry, no train found. Please try another date/route.
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>
@@ -129,11 +101,11 @@
     background-color: #e6f4ea !important;
 }
 
-.form-select, .btn {
+.form-select, .btn, .form-control {
     transition: all 0.3s ease;
 }
 
-.form-select:hover {
+.form-select:hover, .form-control:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
@@ -146,5 +118,4 @@
     .display-6 { font-size: 1.8rem; }
 }
 </style>
-
 @endsection

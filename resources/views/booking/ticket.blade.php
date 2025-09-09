@@ -1,46 +1,32 @@
 @extends('layouts.app')
 
-@section('title', 'Your Ticket')
-
 @section('content')
 <div class="container mt-5">
+    <h3>Your Ticket</h3>
 
-    <!-- Page Heading -->
-    <div class="text-center mb-5">
-        <h2 class="display-6 fw-bold text-dark">
-            <i class="bi bi-receipt text-success me-2"></i>Your Ticket
-        </h2>
-        <p class="text-secondary">Here is your booked ticket. You can download it as PDF.</p>
-    </div>
+    <p><strong>PNR:</strong> {{ $booking->pnr }}</p>
+    <p><strong>Main Passenger Name:</strong> {{ $booking->ticket->passenger_name ?? $booking->name }}</p>
+    <p><strong>Main Passenger Phone:</strong> {{ $booking->phone }}</p>
+    <p><strong>Train:</strong> {{ $booking->schedule->train->name }}</p>
+    <p><strong>Journey Date:</strong> {{ $booking->schedule->run_date->format('d-m-Y') }}</p>
+    <p><strong>Class:</strong> {{ $booking->ticket->class ?? $booking->class }}</p>
+    <p><strong>Passengers:</strong> {{ $booking->ticket->quantity ?? $booking->passengers }}</p>
 
-    <!-- Ticket Card -->
-    <div class="card p-4 shadow-sm rounded-4 mx-auto" style="max-width: 500px; background-color: #f8f9fa;">
-        <p><strong>Passenger:</strong> Naim </p>
-        <p><strong>Train:</strong> Subarna Express</p>
-        <p><strong>Seat:</strong> AC - B2</p>
-        <p><strong>Date:</strong> 20-Aug-2025</p>
-        <p><strong>From:</strong> Dhaka</p>
-        <p><strong>To:</strong> Chattogram</p>
-    </div>
+    <p><strong>Extra Passengers Info:</strong></p>
+    @if($booking->extra_passengers && count($booking->extra_passengers) > 0)
+        <ul>
+            @foreach($booking->extra_passengers as $idx => $p)
+                <li>Passenger {{ $idx + 2 }}: {{ $p['name'] }} ({{ $p['phone'] }})</li>
+            @endforeach
+        </ul>
+    @else
+        <p>None</p>
+    @endif
 
-    <!-- Download Button -->
-    <div class="d-grid mt-3" style="max-width: 500px; margin:auto;">
-        <button class="btn btn-success fw-bold rounded-pill shadow-sm">
-            <i class="bi bi-download me-1"></i> Download PDF
-        </button>
-    </div>
+    <p><strong>Total Price:</strong> {{ ($booking->passengers * 200) }} Taka</p>
+    <p><strong>Payment Method:</strong> {{ $booking->payment_method }}</p>
+    <p><strong>Status:</strong> {{ ucfirst($booking->status) }}</p>
+
+    <a href="{{ route('booking.download', $booking->pnr) }}" class="btn btn-primary mt-3">Download PDF</a>
 </div>
-
-<!-- ================= CSS ================= -->
-<style>
-.card p {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.btn-success:hover {
-    background-color: #0f6f3e;
-    border-color: #0f6f3e;
-}
-</style>
 @endsection
